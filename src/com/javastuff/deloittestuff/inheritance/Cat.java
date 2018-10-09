@@ -16,7 +16,7 @@ public class Cat extends Animal implements Hunter, Jumper, Runner {
 
 	@Override
 	public void hunt() {
-		System.out.println("cat hunting" ");
+		System.out.println("cat hunting");
 		
 	}
 
