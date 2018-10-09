@@ -12,9 +12,11 @@ public class Animal extends Object {
 		
 		
 	}
-	public void move(int distance){
+	/* public void move(int distance){
 		System.out.println("Animal has moved: " + distance + " distance");
 		
 	}
+	*/
+	public abstract move(int distance);
 
 }
