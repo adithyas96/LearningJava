@@ -5,9 +5,24 @@ package com.javastuff.deloittestuff.basics;
 public class Marker {
 
 	final String brand;
-	String color;
+	private String color;
 	private double price;
 	static String category;
+	
+	public String getColor(){
+		return color;
+	}
+	
+	public String setColor(String c) throws MarkerColorNotSupportedException{
+		
+		switch(c){
+		case "Blue": 
+		case "Black":
+		case "Green":
+		case "Red": this.color = c;
+		default: throw new MarkerColorNotSupportedException("For Color:" + c);
+		}
+	}
 	
 	public double getPrice(){
 		return price;
@@ -19,11 +34,13 @@ public class Marker {
 	public void printPrice(){
 		System.out.println(price);
 	}
-	public void editPrice(double p){
+	public void editPrice(double p) throws IllegalArgumentException{
 		if(p>0)
-			this.price = price ; 
-		else 
-			System.out.println("Invalid");
+			price = p ; 
+		else{ 
+			throw new IllegalArgumentException("Invalid Price :" + p);
+			//System.out.println("Invalid");
+		}	
 	}
 
 	public Marker() {

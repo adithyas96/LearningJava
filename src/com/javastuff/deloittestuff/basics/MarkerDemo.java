@@ -6,6 +6,27 @@ public class MarkerDemo {
 	
 	public static void main(String[] args) {
 		Marker m1 = new Marker();
+		try{
+			m1.editPrice(30);
+			m1.printPrice();
+			m1.editPrice(-12);
+			m1.printPrice();
+		}
+		
+		catch(IllegalArgumentException i){
+			System.out.println(i);
+		}
+		
+		System.out.println(m1.getColor());
+		try{
+		m1.setColor("Brown");
+		System.out.println(m1.getColor());
+		}catch(MarkerColorNotSupportedException i){
+			System.out.println("Error Color");
+		}
+	}
+	public static void main4(String[] args) {
+		Marker m1 = new Marker();
 		System.out.println(m1.getPrice());
 		
 		m1.setCategory("Hello");
