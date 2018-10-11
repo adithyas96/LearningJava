@@ -9,6 +9,10 @@ public class Marker {
 	private double price;
 	static String category;
 	
+	public String toString(){
+		return "Marker[Brand: " + brand + ", Color: " + color + "Price : " + price + "]";
+	}
+	
 	public String getColor(){
 		return color;
 	}
